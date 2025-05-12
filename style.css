@@ -19,3 +19,7 @@ body {
     border: 1px solid gray;
     background-color: red;
 }
+
+.description {
+    width: 560px;
+}
