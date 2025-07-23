@@ -162,3 +162,6 @@ switch(action) {
   default:
     console.log("Такой операции нет");
 }
+
+let a = 1;
+ let m = (a>0)?a:0;
