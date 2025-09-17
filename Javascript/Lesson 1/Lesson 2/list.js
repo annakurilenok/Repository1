@@ -31,6 +31,30 @@ let data = {
   }
 };
 
+// Задача с рекурсивной функции
+
+let div = document.getElementById('root');
+
+
+function newCreateTree(container, data) {
+  let ul = document.createElement('ul');
+  
+  for(let key in data){
+    let li = document.createElement('li');
+    li.innerText = key;
+
+    if(data[key]) {
+      newCreateTree(li, data[key]);
+    }
+
+    ul.append(li);
+  }
+
+  container.append(ul);
+}
+
+newCreateTree(div, data);
+
 /*let div = document.getElementById('root');
 
 
@@ -126,3 +150,4 @@ function randomInteger(min, max) {
 }
 
 setInterval(notify, 1000);
+
