@@ -40,6 +40,7 @@ header nav {
     right: 0;
     background-color: black;
    transform: translateX(100%);
+   transition: all 0.3s linear;
 }
 
 nav a {
