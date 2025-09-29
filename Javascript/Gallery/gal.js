@@ -3,7 +3,6 @@ $(document).ready(function(){
         margin: 10,
         loop: true,
         //autoplay: true,
-        
     }
 
   $(".owl-carousel").owlCarousel(options);
