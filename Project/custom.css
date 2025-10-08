@@ -1,16 +1,17 @@
-:root {
-    --font-open-sans: 'Open Sans', sans-serif;
-    --font-cormorant: 'Cormorant', serif;
+:root{
+    --font-open-sans: "Open Sans", sans-serif;
+    --font-cormorant: "Cormorant", serif;
 
-    --color-white: #fff;
+    --color-white: #ffffff;
     --color-bg: #1D2F30;
-    --color-bg-shade:#0B1919;
-    --color-green:#BAE249;
+    --color-bg-shade: #0B1919;
+    --color-green: #BAE249;
     --color-green-active: #688B05;
+    --color-green-hover: #91AC46;
     --color-gray: #899D9D;
     --color-red: #E24949;
 
-    --transition-time: 0.2s;
+    --transition: all 0.2s linear;
 }
 
 body {
@@ -18,75 +19,251 @@ body {
     font-family: var(--font-open-sans);
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4{
     font-family: var(--font-cormorant);
 }
 
-a {
+a{
     text-decoration: none;
-    transition: all var(--transition-time);
+    transition: var(--transition);
 }
 
-.footer-copyright {
+.footer-copyright{
     font-size: 12px;
     line-height: auto;
     color: var(--color-gray);
     padding-top: 3px;
     padding-bottom: 3px;
 }
-
-.footer-socials {
+.footer-socials{
     background: var(--color-bg-shade);
-    padding: 18px 0;
+    padding:18px 0;
 }
 
-.footer-socials nav {
-    gap: 30px;
+.footer-socials nav{
+    gap:30px;
 }
 
-.footer-socials nav a:hover svg path {
-    fill: var(--color-green); 
-    /* меняет цвет иконки в path, fill - цвет заполнения */
+.footer-socials nav a svg path{
+    transition: var(--transition);
 }
 
-.footer-socials nav a svg path {
-    transition: all var(--transition-time);
-    /* устанавливается на сам элемент */
+.footer-socials nav a:hover svg path{
+    fill: var(--color-green);
 }
 
-header {
+header{
     padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:99;
+    background-color: var(--color-bg);   
 }
 
-.menu {
-    gap: 64px;
+.menu{
+    gap:64px;
     margin-left: 125px;
 }
 
-.menu a {
+.menu a{
     color: var(--color-white);
 }
 
-.menu a:hover {
+.menu a:hover{
     color: var(--color-green);
 }
 
-.menu a:focus {
+.menu a:focus{
     color: var(--color-green-active);
-    /* цвет при щелчке */
 }
-
-.header-tools {
-    gap: 64px;
+.header-tools{
+    gap:64px;
 }
-
-.header-tools button {
+.header-tools button{
     background: none;
     border: none;
     width: 24px;
     height: 24px;
 }
 
-#main-banner {
-    background-image: url();
-}  
+.header-tools button svg path{
+    transition: var(--transition);
+}
+
+.header-tools button:hover svg path{
+    stroke: var(--color-green-hover);
+}
+
+.header-tools button:focus svg path{
+    stroke: var(--color-green-active);
+}
+
+#main-banner{
+    background-image: url('./img/1_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 175px;
+    padding-bottom: 115px;
+    position: relative;
+}
+
+#main-banner:after{
+    content: " ";
+    display: block;
+    opacity: 0.7;
+    background-color: var(--color-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#main-banner .container{
+    z-index: 5;
+    position: relative;
+    color: var(--color-white);
+}
+
+#main-banner h1{
+    font-size: 60px;
+    line-height: 100%;
+    margin-bottom: 16px;
+}
+
+#main-banner p{
+    margin-bottom: 24px;
+}
+
+#main-banner a{
+    color: var(--color-green);
+    font-weight: bold;
+}
+
+#main-banner a svg path{
+    transition: var(--transition);
+}
+
+#main-banner a:hover, 
+#main-banner a:hover svg path{
+    color: var(--color-green-hover);
+    fill: var(--color-green-hover);
+}
+
+#main-banner a:focus, 
+#main-banner a:focus svg path{
+    color: var(--color-green-active);
+    fill: var(--color-green-active);
+}
+
+#main-banner a svg{
+    transition: var(--transition);
+}
+
+#main-banner a:hover svg, 
+#main-banner a:focus svg{
+    width: 51px;
+    height: 16px;
+}
+
+#carousel {
+    padding-top: 60px;
+}
+
+.card {
+    border: none;
+    background: none;
+    border-radius: 0;
+    color: var(--color-gray);
+    line-height: 150%;
+}
+
+.card .card-image {
+    background-color: var(--color-bg-shade);
+    padding: 30px 16px;
+    position: relative;
+}
+
+.card .card-image img {
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    width: auto;
+    /* одинаковые картинки в карусели по высоте */
+}
+
+.card .card-image span {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--color-gray);
+    font-family: var(--font-cormorant);
+    text-align: center;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.card .card-content {
+    border: 1px solid var(--color-bg-shade);
+    padding: 16px 16px 24px;
+    flex-grow: 1;
+}
+
+.card.card-content h3 {
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.card .card-content .button {
+    align-self: flex-start;
+    /* чтобы из-за stretch кнопка не растягивалась */
+}
+
+.button {
+     border: 1px solid var(--color-green);
+     color: var(--color-green);
+     border-radius: 0;
+     padding: 10.5px 28.5px;
+}
+
+.button:hover {
+    color: var(--color-bg-shade);
+    background: var(--color-green);
+}
+
+.button:focus {
+    color: var(--color-bg-shade);
+    background: var(--color-green-active);
+    border: 1px solid var(--color-green-active);
+}
+
+.owl-carousel .owl-stage  {
+    display: flex;
+    align-items: stretch;
+    /* занимают всю высоту родительского флекс контейнера */
+}
+
+.owl-carousel .owl-stage .owl-item .card{
+    height: 100%;
+}
+
+.slider-nav {
+    font-size: 24px;
+    color: var(--color-white);
+    font-family: var(--font-cormorant);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 16px;
+    padding-bottom: 57px;
+}
+
+.slider-nav button {
+    background: none;
+    border: none;
+}
