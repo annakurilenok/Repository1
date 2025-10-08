@@ -1,0 +1,92 @@
+:root {
+    --font-open-sans: 'Open Sans', sans-serif;
+    --font-cormorant: 'Cormorant', serif;
+
+    --color-white: #fff;
+    --color-bg: #1D2F30;
+    --color-bg-shade:#0B1919;
+    --color-green:#BAE249;
+    --color-green-active: #688B05;
+    --color-gray: #899D9D;
+    --color-red: #E24949;
+
+    --transition-time: 0.2s;
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family: var(--font-open-sans);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-cormorant);
+}
+
+a {
+    text-decoration: none;
+    transition: all var(--transition-time);
+}
+
+.footer-copyright {
+    font-size: 12px;
+    line-height: auto;
+    color: var(--color-gray);
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.footer-socials {
+    background: var(--color-bg-shade);
+    padding: 18px 0;
+}
+
+.footer-socials nav {
+    gap: 30px;
+}
+
+.footer-socials nav a:hover svg path {
+    fill: var(--color-green); 
+    /* меняет цвет иконки в path, fill - цвет заполнения */
+}
+
+.footer-socials nav a svg path {
+    transition: all var(--transition-time);
+    /* устанавливается на сам элемент */
+}
+
+header {
+    padding: 20px 0;
+}
+
+.menu {
+    gap: 64px;
+    margin-left: 125px;
+}
+
+.menu a {
+    color: var(--color-white);
+}
+
+.menu a:hover {
+    color: var(--color-green);
+}
+
+.menu a:focus {
+    color: var(--color-green-active);
+    /* цвет при щелчке */
+}
+
+.header-tools {
+    gap: 64px;
+}
+
+.header-tools button {
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+}
+
+#main-banner {
+    background-image: url();
+}  
