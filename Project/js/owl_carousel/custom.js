@@ -48,5 +48,20 @@ $(document).ready(function(){
 });
 
 function validate() {
-  return false;
+   let form = document.forms[0];
+   let name = form.elements[0];
+   let email = form.elements[1];
+
+   let str = "Hi! My name is Anna. I'm 23 years old";
+
+   let regex = /^[A-Za-zА-Яа-я]{2,20}\s*[A-Za-zА-Яа-я]{0,20}$/;
+   
+
+   let result = regex.test(str);
+
+  
+   console.log(result);
+   
+
+   return false;
 }
