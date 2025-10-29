@@ -1,6 +1,6 @@
-const _ = require('lodash');
-const $ = require('jquery');
-const alertModul = require('./alert');
+import _ from 'lodash';
+import '../scss/index.scss';
+//npmimport showAlert from './alert';
 
 function component() {
     const element = document.createElement('div');
@@ -14,4 +14,4 @@ function component() {
 
   //$('body').css({backgroundColor: 'pink'}); //jquery
 
-  alertModul.myFunction('Это аллерt!');
+ 
